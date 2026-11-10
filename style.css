@@ -1,0 +1,124 @@
+:root {
+  --bg: #eef1f7;
+  --panel: #ffffff;
+  --text: #14172b;
+  --muted: #5b627d;
+  --accent: #e8590c;
+  --canvas-bg: #0b1030;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #070a1c;
+    --panel: #121734;
+    --text: #e8ebf8;
+    --muted: #9aa2c6;
+    --accent: #ff8a4c;
+    --canvas-bg: #050819;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #070a1c;
+  --panel: #121734;
+  --text: #e8ebf8;
+  --muted: #9aa2c6;
+  --accent: #ff8a4c;
+  --canvas-bg: #050819;
+}
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Trebuchet MS", "Segoe UI", system-ui, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 12px;
+  overflow: hidden;
+}
+.hud {
+  width: min(100%, 480px);
+  display: flex;
+  justify-content: space-between;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+.hud span small {
+  color: var(--muted);
+  font-weight: 400;
+  margin-right: 6px;
+}
+.stage {
+  position: relative;
+  width: min(100%, 480px);
+  aspect-ratio: 3 / 4;
+  max-height: 72vh;
+}
+canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+  background: var(--canvas-bg);
+  border-radius: 14px;
+  border: 2px solid var(--text);
+  touch-action: none;
+}
+.overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 10px;
+  padding: 24px;
+  background: rgba(5, 8, 25, 0.78);
+  color: #e8ebf8;
+  border-radius: 14px;
+}
+.overlay.hidden {
+  display: none;
+}
+.overlay h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+.overlay p {
+  margin: 0;
+  color: #b8bfdc;
+  line-height: 1.5;
+  max-width: 32ch;
+}
+button {
+  font: inherit;
+  font-weight: 700;
+  padding: 12px 28px;
+  border-radius: 999px;
+  border: 0;
+  background: #ff8a4c;
+  color: #1a0d03;
+  cursor: pointer;
+}
+button:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 3px;
+}
+.hint {
+  color: var(--muted);
+  font-size: 0.85rem;
+  margin: 0;
+  text-align: center;
+}

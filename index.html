@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>Space Survival</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="hud">
+      <span><small>Score</small><b id="score">0</b></span>
+      <span><small>Speed</small><b id="speed">1.0x</b></span>
+      <span><small>Best</small><b id="best">0</b></span>
+    </div>
+
+    <div class="stage">
+      <canvas
+        id="game"
+        width="480"
+        height="640"
+        aria-label="Space Survival"
+      ></canvas>
+      <div class="overlay" id="overlay">
+        <h1 id="title">Space Survival</h1>
+        <p id="msg">
+          Steer your ship through the asteroid field.
+        </p>
+        <button id="startBtn">Start game</button>
+      </div>
+    </div>
+
+    <p class="hint">
+      Arrow keys or WASD to move. Press Space to start or restart.
+    </p>
+
+    <script src="game.js"></script>
+  </body>
+</html>
